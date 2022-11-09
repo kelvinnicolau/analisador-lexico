@@ -67,6 +67,12 @@ function verif()
 					entrou = true;
 					break;
 				}
+				console.log(keys[i].substr(0));
+				if (keys[i].substr(0) == keys[i].substr("_") && entrou == false){
+					relatorio += "<tr><td>"+keys[i]+"</td><td> 4 </td></tr> "
+					entrou = true;
+					break;
+				}
 			}
 			if (entrou ==false)
 			{
