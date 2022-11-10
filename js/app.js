@@ -61,22 +61,22 @@ function verif()
 					break;
 				}
 				// Verifica as palavras 
-				console.log(keys[i]);
-				if (keys[i] == subtstr(0) && entrou == false){
+				console.log(keys[i].charAt(0));
+				if (keys[i].charAt(0) == "_" && entrou == false){
 					if (keys[i].length == 2){
 						relatorio += "<tr><td>"+keys[i]+"</td><td> 5 </td></tr> "
 						entrou = true;
 						break;
 					}
 				}
-				if (keys[i].slice(0) == "_" && entrou == false){
+				if (keys[i].charAt(0) == "_" && entrou == false){
 					if (keys[i].length == 3){
 						relatorio += "<tr><td>"+keys[i]+"</td><td> 6 </td></tr> "
 						entrou = true;
 						break;
 					}
 				}
-				if (keys[i].slice(0) == "_" && entrou == false){
+				if (keys[i].charAt(0) == "_" && entrou == false){
 					if (keys[i].length == 4){
 						relatorio += "<tr><td>"+keys[i]+"</td><td> 7 </td></tr> "
 						entrou = true;
