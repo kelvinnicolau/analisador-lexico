@@ -36,13 +36,6 @@ function verif()
 			var entrou = false;
 			for (var j=0; j < keyIdentificador.length; j++)
 			{
-				// if (keys[i] == keyIdentificador[j] && entrou == false)
-				// {
-				// 	relatorio += "<tr><td>"+keys[i]+"</td><td>Identificador </td></tr> "
-				// 	//relatorio += keys[i] + ' ==>  Identificador<br></br>';
-				// 	entrou = true;
-				// 	break;
-				// }
 				if (keys[i] == keyIdentificador[0] && entrou == false)
 				{
 					relatorio += "<tr><td>"+keys[i]+"</td><td> 1 </td></tr> "
@@ -67,24 +60,40 @@ function verif()
 					entrou = true;
 					break;
 				}
-				console.log(keys[i].substr(0));
-				if (keys[i].substr(0) == keys[i].substr("_") && entrou == false){
-					relatorio += "<tr><td>"+keys[i]+"</td><td> 4 </td></tr> "
-					entrou = true;
-					break;
+				// Verifica as palavras 
+				console.log(keys[i]);
+				if (keys[i] == subtstr(0) && entrou == false){
+					if (keys[i].length == 2){
+						relatorio += "<tr><td>"+keys[i]+"</td><td> 5 </td></tr> "
+						entrou = true;
+						break;
+					}
+				}
+				if (keys[i].slice(0) == "_" && entrou == false){
+					if (keys[i].length == 3){
+						relatorio += "<tr><td>"+keys[i]+"</td><td> 6 </td></tr> "
+						entrou = true;
+						break;
+					}
+				}
+				if (keys[i].slice(0) == "_" && entrou == false){
+					if (keys[i].length == 4){
+						relatorio += "<tr><td>"+keys[i]+"</td><td> 7 </td></tr> "
+						entrou = true;
+						break;
+					}
 				}
 			}
 			if (entrou ==false)
 			{
 				relatorio += "<tr><td>"+keys[i]+"</td><td>Sem êxito na analise </td></tr> "
-				//relatorio += keys[i] + ' ==> Sem êxito na analise<br></br>';
+
 				entrou = true;
 			}
 		}
 	}
 	if (2==2)
 	{
-		/* relatorio = keys[0] + "<br></br>"+ relatorio; */
 		document.getElementById('result').innerHTML = relatorio;
 
 		document.getElementById('alfabeto').innerHTML = alfabeto;
